@@ -17,7 +17,6 @@ int main(int argc,char *argv[]) {
   int partner_rank = (world_rank + 1) % 2;
   while (count < LIMIT) {
     if (world_rank == count % 2) {
-      //Incrementa el conteo de ping pong antes de enviarlo
       count++;
       MPI_Send(&count, 1, MPI_INT, partner_rank, 0, MPI_COMM_WORLD);
       printf("%d Enviado e incrementar ping_pong_count %d a %d\n",

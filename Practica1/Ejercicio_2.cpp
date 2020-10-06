@@ -25,6 +25,5 @@ int main() {
         C.freeMatrix();
         n += 100;
     }
-
     return 0;
 }

@@ -13,18 +13,18 @@ void executeMNoBloques(Matrix A, Matrix B,Matrix C){
 
 void executeMByBloques(Matrix A, Matrix B,Matrix C,int bsize){
     auto t1 = std::chrono::high_resolution_clock::now();
-    A.multiplicacionBloques(&B,&C,bsize);
+    A.multiplicacionBloques6(&B,&C,bsize);
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(t2-t1).count();
     cout<<"Con Bloques-tiempo: "<<duration/1000.0<<"\n";
 }
 
 int main() {
-    int n=10000;
-    int bsize = 1000;
+    int n=100;
+    int bsize = 10;
     cout<<"--Test de Multiplicación de Matrices cuadraticas por bloques-- \n";
     cout<<"bloques de "<<bsize<<endl;
-    for(int i=0 ; i<1 ; ++i){
+    for(int i=0 ; i<10 ; ++i){
         
         cout<<"Test "<<i+1<<" con n="<<n<<"\n";
         Matrix A(n),B(n),C(n);
